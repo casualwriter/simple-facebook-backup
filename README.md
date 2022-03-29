@@ -35,12 +35,15 @@ then a static web site is ready on https://casualwriter.github.io/facebook/#mrle
 
 ### Sample Sites
 
-* github page for fb:mrleeyee: https://casualwriter.github.io/facebook/#mrleeyee
-* github page for fb:nganshunkau: https://casualwriter.github.io/facebook/#nganshunkau
+**Hosted on github-page**
+* backup for facebook.com/mrleeyee: https://casualwriter.github.io/facebook/#mrleeyee
+* backup for facebook.com/nganshunkau: https://casualwriter.github.io/facebook/#nganshunkau
 
-As github account can be directly accessed as a web page by githack or RawGit. 
+**Self-hosted on github**
 
-* gitHack for fb:mrleeyee: https://raw.githack.com/casualwriter/simple-facebook-backup/main/index.html#mrleeyee
+As github account can be directly accessed as a web page by githack or RawGit, so it is self-hosted. 
+
+* gitHack for fb:mrleeyee: https://raw.githack.com/casualwriter/simple-facebook-backup/main/#mrleeyee
 * gitHack for fb:nganshunkau: https://raw.githack.com/casualwriter/simple-facebook-backup/main/#nganshunkau
 
 
