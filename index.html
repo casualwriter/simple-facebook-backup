@@ -1,0 +1,116 @@
+<html>
+<head>
+  <title>facebook</title>
+  <meta http-equiv="x-ua-compatible" content="ie=9">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">        
+</head>
+<style>
+body, div { font-family:Verdana,sans-serif; font-size:16px; margin:0; padding:0; }
+button, input { font-family:calibri,arial; } 
+.list { margin:2px; padding:6px; list-style-type:none; }
+.list li { margin:2px; padding:6px; border-bottom:1px solid grey; }
+.list li:hover { background:lightgrey }
+
+#header { background-color:#198964; color:white; height:20px; padding:12px; }
+#left-panel { float:left; overflow:auto; width:29%; }
+#right-panel { float:right; overflow:auto; width:70%; border:1px solid grey; }
+
+@media print{
+  #header, #left-panel, button { display:none!important }
+  #right-panel { position:relative; width:99%; height:auto!important; overflow:hidden; border:none }
+}
+@media screen and (max-width: 700px) {
+  #header { width:100%; height:60px; }
+  #left-panel 	{ position:absolute; left:0px; width:100%; border:1px solid grey; overflow:auto; z-index:1; }
+  #right-panel 	{ position:absolute; left:0px; width:100%; border:1px solid grey; overflow:auto; display:none; background:white; z-index:2 }
+}
+</style>
+<body onload="showList()">
+<div id="header">
+  <div id="heading" style="float:left;font-size:14px;font-weight:bold">facebook backup</div>
+  <div id="hints" style="float:left; margin:10px; font-size:9px; color:yellow">total 0 posts</div>
+  <div id="top-right" style="float:right">
+    <input id=keyword placeholder="keyword" size=10 onchange="showList()" /> 
+    <button onclick="showList('2021')">2021</button>
+    <button onclick="showList('2020')">2020</button>
+    <button onclick="showList('2019')">2019</button>
+    <button id=btnBF onclick="document.getElementById('main').style.fontSize=(++ftsize)+'px'">A+</button>
+    <button id=btnSF onclick="document.getElementById('main').style.fontSize=(--ftsize)+'px'">A-</button>  
+  </div>
+</div>
+<div id="content">
+  <div id="left-panel"></div>
+  <div id="right-panel">
+    <div id=main style="padding:10px"></div> 
+  </div>
+</div>
+</html>
+
+<script>
+//==== show list of posts
+function showList( yr ) {
+  var key = document.getElementById('keyword').value
+  var html = '<div><ul class=list>'
+  
+  for (var i=0; i<posts.length; i++) { 
+    if ( !yr || (posts[i].time.substr(0,4)==yr) )
+      if ( !key ||  posts[i].text.toLowerCase().indexOf(key.toLowerCase())>=0 ) { 
+        html += '<li onclick="showPost('+i+')" title="#' + i + ': ' + posts[i].post_text
+        html += '"><small>' + posts[i].time.substr(0,10) + '</small> ';
+        html += postTitle(posts[i].text).replace( new RegExp(key,'gim'),'<mark>$&</mark>') + '</li>\n'
+      }
+  }
+  
+  document.getElementById('left-panel').innerHTML = html + '</ul><div>'
+  document.getElementById('hints').innerHTML = 'Total ' + document.querySelectorAll('li').length + ' Posts'
+  if (window.innerWidth>700) document.querySelector('li').click()
+
+  // set title
+  document.title = fbName
+  document.getElementById('heading').innerText = fbName + ' (fb:' + fbKey + ')'   
+}
+
+//==== get post title
+function postTitle(text) {
+  if ( text.substr( 0, text.indexOf('\n') ) =='YOUTUBE.COM' ) {
+    return 'youtube: ' + text.split('\n')[1] 
+  } else {
+    return text.substr( 0, text.indexOf('\n') )
+  }
+}
+
+//==== show post contents
+function showPost(n) {
+  var key = document.getElementById('keyword').value
+  var html = '<small>From <a target=_new href="'+ posts[n].post_url + '">Facebook</a>, posted on ' + posts[n].time + '</small>'
+  html = '<h2>' + posts[n].text.replace('\n', '</h2>' + html + '<p>'  )
+  if (key) html = html.replace( new RegExp(key,'gim'),'<mark>$&</mark>')
+  if ( posts[n].image && posts[n].image.indexOf('facebook.com')<0 ) {
+      html += '<img style="padding:20px; width:95%" src="' + posts[n].image + '" />'
+  } 
+  
+  document.getElementById('main').innerHTML = html.replace(/\n\n/g, '</p><p>').replace(/\n/g,'<br><br>')
+  if (window.innerWidth<=700) {
+    document.getElementById('right-panel').style.display = 'block'
+	  history.pushState(null, null, '#nbb');
+  } 
+}
+
+// back button for mobile
+window.addEventListener('popstate', function() {
+  document.getElementById('right-panel').style.display = 'none'
+} )
+
+// set height
+var filter, ftsize = 16
+document.getElementById('left-panel').style.height = (window.innerHeight - 50) + 'px' 
+document.getElementById('right-panel').style.height = (window.innerHeight - 50) + 'px' 
+
+// load script
+var script = document.createElement('script');
+script.src = (window.location.href.split('#')[1]||'nganshunkau')+'.js'
+document.head.appendChild(script);
+</script>
+</html>
+
