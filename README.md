@@ -7,7 +7,7 @@ then simple upload the index.html with the javascript file to web-hosting, a sta
 
 **Features**
 
-* a single html file (index.html) in 115 lines
+* a single html file ([index.html](index.html)) in 115 lines
 * vanilla JS, without any dependance
 * support multiple facebook accounts (by #account-name)
 * mobile support with responsive design
