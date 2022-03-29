@@ -12,7 +12,7 @@ then simple upload the index.html with the javascript file to web-hosting, a sta
 * support multiple facebook accounts (by #account-name)
 * mobile support with responsive design
 
-### Sample Sites
+### How to use
 
 For example, to backup the facebook posts of https://www.facebook.com/mrleeyee
 
@@ -32,6 +32,18 @@ for post in get_posts('mrleeyee', pages=999):
 4. upload to web-hosting (e.g. https://casualwriter.github.io/facebook)
 
 then a static web site is ready on https://casualwriter.github.io/facebook/#mrleeyee
+
+### Sample Sites
+
+* github page for fb:mrleeyee: https://casualwriter.github.io/facebook/#mrleeyee
+* github page for fb:nganshunkau: https://casualwriter.github.io/facebook/#nganshunkau
+
+As github account can be directly accessed as a web page by githack or RawGit. 
+
+* gitHack for fb:mrleeyee: https://raw.githack.com/casualwriter/simple-facebook-backup/main/index.html#mrleeyee
+* gitHack for fb:nganshunkau: https://raw.githack.com/casualwriter/simple-facebook-backup/main/#nganshunkau
+
+
 
 ### Modification History
 
