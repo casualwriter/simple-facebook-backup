@@ -23,7 +23,7 @@ For example, to backup the facebook posts of https://www.facebook.com/mrleeyee
 from facebook_scraper import get_posts
 
 fb_name  = 'mrleeyee'
-fb_title = '李怡'
+fb_title = 'Mr. LeeYee'
 
 f = open( fb_name+'.js', 'w', encoding='UTF-8' )
 
@@ -31,9 +31,13 @@ print( "var fbKey='" + fb_name + "', fbName = '" + fb_title + "'", file=f );
 print( "var None=null, False=false, True=true", file=f )
 print( "var posts=[], i=0", file=f );
 
-for post in get_posts( fb_name, pages=99, credentials=('youemail@gmail.com', '???') )
+#### if fb required login, use below code
+#for post in get_posts( fb_name, pages=99, credentials=('youemail@gmail.com', '???') )
+for post in get_posts( fb_name, pages=99 )
   print( "posts[i++] = ", post, file=f)
 ~~~
+
+ 
 
 3. run script fb-fb-backup.py to backup posts to file `{fb_name}.js`
 4. upload to web-hosting (e.g. https://casualwriter.github.io/facebook)
@@ -43,19 +47,20 @@ then a static web site is ready on https://casualwriter.github.io/facebook/#mrle
 ### Sample Sites
 
 **Hosted on github-page**
-* backup for facebook.com/mrleeyee: https://casualwriter.github.io/facebook/#mrleeyee
-* backup for facebook.com/nganshunkau: https://casualwriter.github.io/facebook/#nganshunkau
+* backup for facebook.com/mrleeyee: https://casualwriter.github.io/facebook#mrleeyee
+* backup for facebook.com/nganshunkau: https://casualwriter.github.io/facebook#nganshunkau
+* backup for facebook.com/nganshunkau: https://casualwriter.github.io/facebook#epinoia2020
 
 **Self-hosted on github**
 
-As github account can be directly accessed as a web page by githack or RawGit, so it is self-hosted. 
+As github source can be directly accessed as a web page by githack or RawGit, so it is self-hosted. 
 
-* gitHack for fb:mrleeyee: https://raw.githack.com/casualwriter/simple-facebook-backup/main/source/#mrleeyee
-* gitHack for fb:nganshunkau: https://raw.githack.com/casualwriter/simple-facebook-backup/main/source/#nganshunkau
-
+* gitHack for fb:mrleeyee: https://raw.githack.com/casualwriter/simple-facebook-backup/main/source#mrleeyee
+* gitHack for fb:nganshunkau: https://raw.githack.com/casualwriter/simple-facebook-backup/main/source#nganshunkau
+* gitHack for fb:epinoia2020: https://raw.githack.com/casualwriter/simple-facebook-backup/main/source#epinoia2020
 
 
 ### Modification History
 
 * 2022/01/18 v0.50, initial version
-* 2022/03/31 v0.60, cater multiple facebook account.
+* 2022/03/31 v0.60, cater multiple facebook accounts.
