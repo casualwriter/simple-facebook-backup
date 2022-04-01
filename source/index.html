@@ -13,7 +13,7 @@ button, input { font-family:calibri,arial; }
 .list li:hover { background:lightgrey }
 
 #header { background-color:#198964; color:white; height:20px; padding:12px; }
-#left-panel { float:left; overflow:auto; width:29%; }
+#left-panel { float:left; overflow:auto; width:29.5%; border:1px solid grey}
 #right-panel { float:right; overflow:auto; width:70%; border:1px solid grey; }
 
 @media print{
@@ -32,14 +32,14 @@ button, input { font-family:calibri,arial; }
   <div id="hints" style="float:left; margin:10px; font-size:9px; color:yellow">total 0 posts</div>
   <div id="top-right" style="float:right">
     <input id=keyword placeholder="keyword" size=10 onchange="showList()" /> 
+    <button onclick="showList('2022')">2022</button>
     <button onclick="showList('2021')">2021</button>
     <button onclick="showList('2020')">2020</button>
-    <button onclick="showList('2019')">2019</button>
     <button id=btnBF onclick="document.getElementById('main').style.fontSize=(++ftsize)+'px'">A+</button>
     <button id=btnSF onclick="document.getElementById('main').style.fontSize=(--ftsize)+'px'">A-</button>  
   </div>
 </div>
-<div id="content">
+<div id="content" style="margin:4px">
   <div id="left-panel"></div>
   <div id="right-panel">
     <div id=main style="padding:10px"></div> 
@@ -107,8 +107,8 @@ window.addEventListener('popstate', function() {
 
 // set height
 var filter, ftsize = 16
-document.getElementById('left-panel').style.height = (window.innerHeight - 50) + 'px' 
-document.getElementById('right-panel').style.height = (window.innerHeight - 50) + 'px' 
+document.getElementById('left-panel').style.height = (window.innerHeight - 54) + 'px' 
+document.getElementById('right-panel').style.height = (window.innerHeight - 54) + 'px' 
 
 // load script
 var script = document.createElement('script');

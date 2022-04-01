@@ -7,10 +7,12 @@ then simple upload the index.html with the javascript file to web-hosting, a sta
 
 **Features**
 
-* a single html file ([index.html](source/index.html)) in 115 lines
+* single html file ([index.html](source/index.html)) in 118 lines
 * vanilla JS, without any dependance
 * support multiple facebook accounts (by #account-name)
 * mobile support with responsive design
+* content searchable
+* nice printout
 
 ### How to use
 
@@ -47,17 +49,17 @@ then a static web site is ready on https://casualwriter.github.io/facebook/#mrle
 ### Sample Sites
 
 **Hosted on github-page**
-* backup for facebook.com/mrleeyee: https://casualwriter.github.io/facebook#mrleeyee
-* backup for facebook.com/nganshunkau: https://casualwriter.github.io/facebook#nganshunkau
-* backup for facebook.com/nganshunkau: https://casualwriter.github.io/facebook#epinoia2020
+* backup for facebook.com/mrleeyee: https://casualwriter.github.io/facebook/#mrleeyee
+* backup for facebook.com/nganshunkau: https://casualwriter.github.io/facebook/#nganshunkau
+* backup for facebook.com/nganshunkau: https://casualwriter.github.io/facebook/#epinoia2020
 
 **Self-hosted on github**
 
 As github source can be directly accessed as a web page by githack or RawGit, so it is self-hosted. 
 
-* gitHack for fb:mrleeyee: https://raw.githack.com/casualwriter/simple-facebook-backup/main/source#mrleeyee
-* gitHack for fb:nganshunkau: https://raw.githack.com/casualwriter/simple-facebook-backup/main/source#nganshunkau
-* gitHack for fb:epinoia2020: https://raw.githack.com/casualwriter/simple-facebook-backup/main/source#epinoia2020
+* gitHack for fb:mrleeyee: https://raw.githack.com/casualwriter/simple-facebook-backup/main/source/index.html#mrleeyee
+* gitHack for fb:nganshunkau: https://raw.githack.com/casualwriter/simple-facebook-backup/main/source/#nganshunkau
+* gitHack for fb:epinoia2020: https://raw.githack.com/casualwriter/simple-facebook-backup/main/source/#epinoia2020
 
 
 ### Modification History

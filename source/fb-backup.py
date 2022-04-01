@@ -10,7 +10,7 @@ print( "var None=null, False=false, True=true", file=f )
 print( "var posts=[], i=0", file=f );
 
 #### if fb required login, use below code
-#for post in get_posts( fb_name, pages=99, credentials=('youemail@gmail.com', '???') )
-for post in get_posts( fb_name, pages=99 ):
+#for post in get_posts( fb_name, pages=80, credentials=('youemail@gmail.com', '???') )
+for post in get_posts( fb_name, pages=80 ):
   print( "posts[i++] = ", post, file=f)
 
