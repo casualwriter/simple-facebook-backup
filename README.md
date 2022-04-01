@@ -31,7 +31,7 @@ print( "var fbKey='" + fb_name + "', fbName = '" + fb_title + "'", file=f );
 print( "var None=null, False=false, True=true", file=f )
 print( "var posts=[], i=0", file=f );
 
-for post in get_posts( fb_name, pages=99, credentials=('hungchongki@gmail.com', '758194') ):
+for post in get_posts( fb_name, pages=99, credentials=('youemail@gmail.com', '???') )
   print( "posts[i++] = ", post, file=f)
 ~~~
 
