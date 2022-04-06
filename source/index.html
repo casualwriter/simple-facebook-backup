@@ -1,7 +1,7 @@
-<html>
+
+<!DOCTYPE html>
 <head>
   <title>facebook</title>
-  <meta http-equiv="x-ua-compatible" content="ie=9">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">        
 </head>
@@ -48,7 +48,12 @@ button, input { font-family:calibri,arial; }
 </html>
 
 <script>
-//==== show list of posts
+//######################################################################################
+// Program: Show facebook-scraper.js into static web site
+// Github: https://github.com/casualwriter/simple-facebook-backup
+// License: MIT. Last updated on 2022/04/06, v0.61. minor fix
+//######################################################################################
+//=== show list of posts
 function showList( yr ) {
   var key = document.getElementById('keyword').value
   var html = '<div><ul class=list>'
@@ -66,12 +71,11 @@ function showList( yr ) {
   document.getElementById('hints').innerHTML = 'Total ' + document.querySelectorAll('li').length + ' Posts'
   if (window.innerWidth>700) document.querySelector('li').click()
 
-  // set title
   document.title = fbName
   document.getElementById('heading').innerText = fbName + ' (fb:' + fbKey + ')'   
 }
 
-//==== get post title
+//=== get post title, default first line of text
 function postTitle(text) {
   if ( text.substr( 0, text.indexOf('\n') ) =='YOUTUBE.COM' ) {
     return 'youtube: ' + text.split('\n')[1] 
@@ -97,10 +101,10 @@ function showPost(n) {
   } 
 }
 
-//==== simulate function in facebook-scraper.js, e.g. datetime.datetime(2022, 1, 9, 5, 30, 55)
+//=== simulate datetime function for facebook-scraper.js, e.g. datetime.datetime(2022, 1, 9, 5, 30, 55)
 var datetime = { datetime: function (a,b,c,d,e,f) { return a + '/' + (b<10? '0':'')+b + '/' + (c<10?'0':'') + c + ' ' + d + ':' + e + (f? ':'+f: '') } }
 
-// back button for mobile
+//=== cater back button for mobile
 window.addEventListener('popstate', function() {
   document.getElementById('right-panel').style.display = 'none'
 } )
@@ -112,7 +116,7 @@ document.getElementById('right-panel').style.height = (window.innerHeight - 54) 
 
 // load script
 var script = document.createElement('script');
-script.src = (window.location.href.split('#')[1]||'nganshunkau')+'.js'
+script.src = (window.location.href.split('#')[1]||'mrleeyee')+'.js'
 document.head.appendChild(script);
 </script>
 </html>

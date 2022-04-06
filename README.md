@@ -1,13 +1,13 @@
 ### Description
 
-`simple-facebook-backup` is a simple html/js program to represent the facebook posts into a static web site. 
+`simple-facebook-backup` is a simple html/js program to represent backup of facebook posts into a static web site. 
 
-first, please use [facebook-scraper](https://pypi.org/project/facebook-scraper/) to backup facebook posts int a **javascript file**, 
+first, please use [facebook-scraper](https://pypi.org/project/facebook-scraper/) to backup facebook posts into a **javascript file**, 
 then simple upload the index.html with the javascript file to web-hosting, a static web site is ready.
 
 **Features**
 
-* single html file ([index.html](source/index.html)) in 118 lines
+* single html file ([index.html](source/index.html)) in 120 lines
 * vanilla JS, without any dependance
 * support multiple facebook accounts (by #account-name)
 * mobile support with responsive design
@@ -19,7 +19,7 @@ then simple upload the index.html with the javascript file to web-hosting, a sta
 For example, to backup the facebook posts of https://www.facebook.com/mrleeyee
 
 1. install [facebook-scraper](https://pypi.org/project/facebook-scraper/) from https://pypi.org/project/facebook-scraper/
-2. open and revise python script fb-backup.py, simple revise the facebook name and title
+2. open and revise python script fb-backup.py, simple revise the facebook **name and title**
 
 ~~~
 from facebook_scraper import get_posts
@@ -34,8 +34,8 @@ print( "var None=null, False=false, True=true", file=f )
 print( "var posts=[], i=0", file=f );
 
 #### if fb required login, use below code
-#for post in get_posts( fb_name, pages=99, credentials=('youemail@gmail.com', '???') )
-for post in get_posts( fb_name, pages=99 )
+#for post in get_posts( fb_name, pages=99, credentials=('youemail@gmail.com', 'password') ):
+for post in get_posts( fb_name, pages=99 ):
   print( "posts[i++] = ", post, file=f)
 ~~~
 
@@ -49,6 +49,7 @@ then a static web site is ready on https://casualwriter.github.io/facebook/#mrle
 ### Sample Sites
 
 **Hosted on github-page**
+
 * backup for facebook.com/mrleeyee: https://casualwriter.github.io/facebook/#mrleeyee
 * backup for facebook.com/nganshunkau: https://casualwriter.github.io/facebook/#nganshunkau
 * backup for facebook.com/nganshunkau: https://casualwriter.github.io/facebook/#epinoia2020
@@ -66,3 +67,4 @@ As github source can be directly accessed as a web page by githack or RawGit, so
 
 * 2022/01/18 v0.50, initial version
 * 2022/03/31 v0.60, cater multiple facebook accounts.
+* 2022/04/06 v0.61, minor fix
